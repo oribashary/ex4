@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit Shirt</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="my-4">Welcome to the "Model Money City" page!</h1>
+		<p>Here, we've got all the latest info on our models' prices and the cities they're located in. We know you're
+			excited to make an offer, but hold your horses! Before you do that, here's what you need to know:</p>
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title">Offer Outcomes</h5>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">We've got two possible outcomes for your offer: either it'll be accepted, or
+					it'll be denied.</li>
+				<li class="list-group-item">If you're lucky enough to have enough money to make an offer, we'll return a
+					message that looks something like this: "model_money_city_accept". That means you're good to go!
+				</li>
+				<li class="list-group-item">On the other hand, if you don't have enough cash to make an offer, we'll
+					return a message that looks like this: "model_money_city_denied". Sorry, but we've got to keep our
+					models fed and clothed!</li>
+			</ul>
+		</div>
+		<p>So, go ahead and start browsing our models and their prices, and don't forget to bring your wallet if you're
+			serious about making an offer!</p> <br/>
+		<form action="process.php" method="post">
+			<div class="form-group">
+				<label>Shirt Model:</label><br>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="model" id="ThePunisher" value="ThePunisher">
+					<label class="form-check-label" for="ThePunisher">
+						"The Punisher" - A shirt with a funny pun printed on it
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="model" id="TheMemeMachine"
+						value="TheMemeMachine">
+					<label class="form-check-label" for="TheMemeMachine">
+						"The Meme Machine" - A shirt with a popular internet meme printed on it
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="model" id="TheBaconator" value="TheBaconator">
+					<label class="form-check-label" for="TheBaconator">
+						"The Baconator" - A shirt with a cartoon strip of a bacon superhero printed on it
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label>I can pay:</label><br>
+				<div class="input-group">
+					<input type="number" name="money" class="form-control" required>
+					<div class="input-group-append">
+						<span class="input-group-text">ILS</span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Im coming to pick my shirt from:</label><br>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" name="city[]"
+						id="HogwartsSchoolofWitchcraftandWizardry" value="HogwartsSchoolofWitchcraftandWizardry">
+					<label class="form-check-label" for="HogwartsSchoolofWitchcraftandWizardry">
+						Hogwarts School of Witchcraft and Wizardry
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" name="city[]" id="CentralPerk" value="CentralPerk">
+					<label class="form-check-label" for="CentralPerk">
+						Central Perk
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" name="city[]" id="JurassicPark"
+						value="JurassicPark">
+					<label class="form-check-label" for="JurassicPark">
+						Jurassic Park
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" name="city[]" id="TheBatcave" value="TheBatcave">
+					<label class="form-check-label" for="TheBatcave">
+						The Batcave
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" name="city[]" id="Springfield" value="Springfield">
+					<label class="form-check-label" for="Springfield">
+						Springfield
+					</label>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	</div>
+</body>
+
+</html>

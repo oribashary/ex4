@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Validation Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Form Validation Example</h2>
+                <!-- NOTE : I made some strict validations to practice best practice validation(as extra work)-->
+                <form method="get" action="http://se.shenkar.ac.il/teach/web1/get_form3.php"
+                    onsubmit="return validateForm()">
+
+                    <!-- Full Name Input -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name="fullName"
+                            placeholder="Enter your full name">
+                        <span id="fullNameError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Password Input: I made the validation on the js side but there's the code for the client side aswell -->
+                    <!-- 
+                    <div class="form-group">
+                      <label for="pass">Password</label>
+                      <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter your password"
+                        pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$" required>
+                      <span id="passError" class="text-danger"></span>
+                    </div>
+                    -->
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+                        <input type="password" class="form-control" id="pass" name="pass"
+                            placeholder="Enter your password">
+                        <span id="passError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Email Input: I made more strict validation on the js side -->
+                    <div class="form-group">
+                        <label for="mail">Email</label>
+                        <input type="email" class="form-control" id="mail" name="mail"
+                            placeholder="Enter your email address">
+                        <span id="mailError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Website Input: I made more strict validation on the js side-->
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" class="form-control" id="website" name="website"
+                            placeholder="Enter your website URL">
+                        <span id="websiteError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Phone Input -->
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone"
+                            placeholder="Enter your phone number">
+                        <span id="phoneError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Coffee Input -->
+                    <div class="form-group">
+                        <label for="coffee">Coffee</label>
+                        <input type="number" class="form-control" id="coffee" name="coffee"
+                            placeholder="Enter the number of coffees">
+                        <span id="coffeeError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Temper Input -->
+                    <div class="form-group">
+                        <label for="temper">Temper</label>
+                        <input type="range" class="form-control" id="temper" name="temper" min="0" max="10" step="1">
+                    </div>
+
+                    <!-- Address Input -->
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea class="form-control" id="address" name="address" rows="3"
+                            placeholder="Enter your address"></textarea>
+                    </div>
+
+                    <!-- Interests Input -->
+                    <div class="form-group">
+                        <label for="interests">Interests</label><br>
+                        <input type="checkbox" id="interests1" name="interests[]" value="Watching cat videos">
+                        <label for="interests1">Watching cat videos</label><br>
+                        <input type="checkbox" id="interests2" name="interests[]" value="Collecting memes">
+                        <label for="interests2">Collecting memes</label><br>
+                        <input type="checkbox" id="interests3" name="interests[]" value="Solving riddles">
+                        <label for="interests3">Solving riddles</label><br>
+                        <input type="checkbox" id="interests4" name="interests[]" value="Playing pranks">
+                        <label for="interests4">Playing pranks</label><br>
+                        <input type="checkbox" id="interests5" name="interests[]" value="Watching paint dry">
+                        <label for="interests5">Watching paint dry</label><br>
+                        <span id="interestsError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Gender Input -->
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select class="form-control" id="gender" name="gender">
+                            <option value="">Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span id="genderError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Age Input -->
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <select class="form-control" id="age" name="age" required>
+                            <option value="">Select your age</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                        </select>
+                        <span id="ageError" class="text-danger"></span>
+                    </div>
+
+                    <!-- Favorite Animal Input -->
+                    <div class="form-group">
+                        <label for="favoriteAnimal">Favorite Animal</label>
+                        <input type="text" class="form-control" id="favoriteAnimal" name="favoriteAnimal"
+                            placeholder="Enter your favorite animal">
+                        <span id="favoriteAnimalError" class="text-danger"></span>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
